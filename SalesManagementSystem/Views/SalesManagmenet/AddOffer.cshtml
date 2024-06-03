@@ -1,0 +1,82 @@
+﻿@model Offer
+
+@{
+    ViewData["Title"] = "Teklif Ekle";
+}
+
+<!-- Sayfanın arka plan rengini mavi yapmak için bir stil ekleyelim -->
+<style>
+    body {
+        background-color: #f0f8ff;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2>Teklif Ekle</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="AddOffer" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="Id">Teklif No</label>
+                        <input type="number" class="form-control" asp-for="Id" id="Id" required />
+                        <div class="invalid-feedback">
+                            Lütfen teklif ID'sini girin.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="OfferName">Teklif Adı</label>
+                        <input type="text" class="form-control" asp-for="OfferName" id="OfferName" required />
+                        <div class="invalid-feedback">
+                            Lütfen teklif adını girin.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="CustomerName">Müşteri Adı</label>
+                        <input type="text" class="form-control" asp-for="CustomerName" id="CustomerName" required />
+                        <div class="invalid-feedback">
+                            Lütfen müşteri adını girin.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="OfferAmount">Teklif Miktarı</label>
+                        <input type="text" class="form-control" asp-for="OfferAmount" id="OfferAmount" required />
+                        <div class="invalid-feedback">
+                            Lütfen teklif miktarını girin.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="Category">Kategori</label>
+                        <input type="text" class="form-control" asp-for="Category" id="Category" required />
+                        <div class="invalid-feedback">
+                            Lütfen kategoriyi girin.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

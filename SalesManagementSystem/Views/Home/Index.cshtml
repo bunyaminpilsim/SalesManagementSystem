@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<style>
+    body {
+        background-color: #f0f8ff;
+    }
+
+    .hero {
+        background: linear-gradient(rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.6)), url('/images/hero-bg.jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+    .card-deck .card {
+        margin-top: 20px;
+    }
+
+        .card-deck .card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.2s;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>
+
+<div class="hero">
+    <div class="container">
+        <h1 class="display-4">Bünyamin Pilsim'in Projesine Hoş Geldiniz</h1>
+        <p class="lead">Bu sistem, gelen teklifleri yönetmenizi ve listelemenizi sağlar.</p>
+        <a href="/SalesManagmenet/OfferList" class="btn btn-primary btn-lg">Teklifleri Görüntüle</a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center my-4">Özellikler</h2>
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Teklif Yönetimi</h5>
+                <p class="card-text">Gelen teklifleri ekleyin, güncelleyin ve silin. Tüm tekliflerinizi tek bir yerden yönetin.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Kullanıcı Dostu Arayüz</h5>
+                <p class="card-text">Kolay ve sezgisel kullanıcı arayüzü ile işlemlerinizi hızlıca gerçekleştirin.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Güçlü Raporlama</h5>
+                <p class="card-text">Tekliflerinizin durumunu ve performansını izleyin, detaylı raporlar alın.</p>
+            </div>
+        </div>
+    </div>
+</div>
