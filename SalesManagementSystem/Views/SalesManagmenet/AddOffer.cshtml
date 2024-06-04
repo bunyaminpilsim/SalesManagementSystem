@@ -67,9 +67,9 @@
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
                         <label for="Category">Kategori</label>
-                        <input type="text" class="form-control" asp-for="Category" id="Category" required />
+                        <select style="width:50%" class="form-control" asp-for="Category" asp-items="ViewBag.Categories" id="Category" required></select>
                         <div class="invalid-feedback">
-                            Lütfen kategoriyi girin.
+                            Lütfen kategoriyi seçin.
                         </div>
                     </div>
                 </div>

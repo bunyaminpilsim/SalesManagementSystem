@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SalesManagementSystem.Models;
 using SalesManagementSystem.Repositories;
 
@@ -13,9 +14,19 @@ namespace SalesManagementSystem.Controllers
             _offerRepository = offerRepository;
         }
 
+        List<SelectListItem> categories = new List<SelectListItem>()
+        {
+            new SelectListItem {Value="Teklif",Text="Teklif"},
+            new SelectListItem {Value="Pazarlık",Text="Pazarlık"},
+            new SelectListItem {Value="Kazanıldı",Text="Kazanıldı"},
+            new SelectListItem {Value="Kaybedildi",Text="Kaybedildi"},
+        };
+
         [HttpGet]
         public IActionResult AddOffer()
         {
+            ViewBag.Categories = categories;
+
             return View();
         }
 
@@ -25,6 +36,7 @@ namespace SalesManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 _offerRepository.AddOffer(offer);
+                ViewBag.Categories = categories;
                 return RedirectToAction("OfferList");
             }
             return View(offer);
@@ -44,6 +56,7 @@ namespace SalesManagementSystem.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Categories = categories;
             return View(offer);
         }
 
@@ -53,6 +66,7 @@ namespace SalesManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 _offerRepository.UpdateOffer(offer);
+                ViewBag.Categories = categories;
                 return RedirectToAction("OfferList");
             }
             return View(offer);
